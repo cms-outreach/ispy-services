@@ -1,3 +1,20 @@
+2009-09-21  Ianna Osborne  <ianna.osborne@cern.ch>
+
+	* BuildFile, interface/IgCollection.h,
+	interface/IgLinearAlgebra.h, interface/IgNet.h,
+	interface/IgNetError.h, interface/IgParser.h, src/IgCollection.cc,
+	src/IgNet.cc, src/IgNetError.cc, test/BuildFile,
+	test/consumer.cpp, test/source.cpp,
+	test/test_CollectionIOPerformance.cpp,
+	test/test_ContainersOverride.cpp,
+	test/test_CreateSimpleAssociations.cpp,
+	test/test_CreateSimpleAssociations02.cpp,
+	test/test_CreateSimpleCollection.cpp,
+	test/test_CreateWriteReadWriteReadPrint.cpp,
+	test/test_CreateWriteReadWriteReadPrintNoAssociations.cpp,
+	test/test_LinearAlgebra.cpp, test/test_NavigateAssociations.cpp:
+	Split of Iguana and iSpy - files migrated from Iguana/Framework.
+
 2009-04-24  Ianna Osborne  <Ianna.Osborne@cern.ch>
 
 	* IgCollection.h: Constructor is protected.
