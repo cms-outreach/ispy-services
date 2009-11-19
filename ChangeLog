@@ -1,3 +1,7 @@
+2009-11-19  Ianna Osborne  <ianna.osborne@cern.ch>
+
+	* IgParser.h: Performance improvements from Giulio.
+
 2009-09-21  Ianna Osborne  <ianna.osborne@cern.ch>
 
 	* BuildFile, interface/IgCollection.h,
