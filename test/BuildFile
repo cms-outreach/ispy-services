@@ -7,5 +7,3 @@
 <bin name="test_ISpy_LinearAlgebra" file=test_LinearAlgebra.cpp></bin>
 <bin name="test_ISpy_CreateWriteReadWriteReadPrint" file=test_CreateWriteReadWriteReadPrint.cpp></bin>
 <bin name="test_ISpy_NavigateAssociations" file=test_NavigateAssociations.cpp></bin>
-<bin name="test_ISpy_NetSource" file="source.cpp"></bin>
-<bin name="test_ISpy_NetConsumer" file="consumer.cpp"></bin>

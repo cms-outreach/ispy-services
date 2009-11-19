@@ -1,5 +1,10 @@
 2009-11-19  Ianna Osborne  <ianna.osborne@cern.ch>
 
+	* ISpy/Services/interface/IgNet.h
+	ISpy/Services/interface/IgNetError.h ISpy/Services/src/IgNet.cc
+	ISpy/Services/src/IgNetError.cc ISpy/Services/test/consumer.cpp
+	ISpy/Services/test/source.cpp: Removed - migrated to DQMNet.
+
 	* IgParser.h: Performance improvements from Giulio.
 
 2009-09-21  Ianna Osborne  <ianna.osborne@cern.ch>
