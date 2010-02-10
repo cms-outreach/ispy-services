@@ -1,6 +1,6 @@
 
-#ifndef ISPY_IG_LINEAR_ALGEBRA_H
-#define ISPY_IG_LINEAR_ALGEBRA_H
+#ifndef IGUANA_IG_LINEAR_ALGEBRA_H
+#define IGUANA_IG_LINEAR_ALGEBRA_H
 
 
 #include <cassert>
@@ -142,4 +142,4 @@ typedef GetterPolicy<StoragePolicy, float, 2> IgV2f;
 typedef GetterPolicy<StoragePolicy, float, 3> IgV3f;
 typedef GetterPolicy<StoragePolicy, float, 4> IgV4f;
 
-#endif // ISPY_IG_LINEAR_ALGEBRA_H
+#endif // IGUANA_IG_LINEAR_ALGEBRA_H

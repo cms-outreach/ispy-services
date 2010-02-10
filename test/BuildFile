@@ -1,9 +1,6 @@
 <use name=ISpy/Services>
-<bin name="test_ISpy_CollectionIOPerformance" file=test_CollectionIOPerformance.cpp></bin>
-<bin name="test_ISpy_CreateSimpleAssociations" file=test_CreateSimpleAssociations.cpp></bin>
-<bin name="test_ISpy_CreateWriteReadWriteReadPrintNoAssociations" file=test_CreateWriteReadWriteReadPrintNoAssociations.cpp></bin>
-<bin name="test_ISpy_ContainersOverride" file=test_ContainersOverride.cpp></bin>
-<bin name="test_ISpy_CreateSimpleCollection" file=test_CreateSimpleCollection.cpp></bin>
-<bin name="test_ISpy_LinearAlgebra" file=test_LinearAlgebra.cpp></bin>
-<bin name="test_ISpy_CreateWriteReadWriteReadPrint" file=test_CreateWriteReadWriteReadPrint.cpp></bin>
-<bin name="test_ISpy_NavigateAssociations" file=test_NavigateAssociations.cpp></bin>
+<use name=qtbase>
+<lib name=QtTest>
+<bin file=test_CollectionIOPerformance.cpp></bin>
+<bin file=test_ContainersOverride.cpp></bin>
+<bin file=test_LinearAlgebra.cpp></bin>
