@@ -1,0 +1,9 @@
+<use   name="ISpy/Services"/>
+<use   name="qtbase"/>
+<lib   name="QtTest"/>
+<bin   file="test_CollectionIOPerformance.cpp">
+</bin>
+<bin   file="test_ContainersOverride.cpp">
+</bin>
+<bin   file="test_LinearAlgebra.cpp">
+</bin>
