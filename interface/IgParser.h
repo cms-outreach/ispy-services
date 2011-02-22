@@ -1,10 +1,6 @@
 #ifndef IGUANA_IG_PARSER_H
 #define IGUANA_IG_PARSER_H
-# ifdef PROJECT_NAME
-# include <ISpy/Services/interface/IgCollection.h>
-# else
-# include <IgCollection.h>
-# endif
+#include <Framework/IgCollection.h>
 
 class ParseError
 {

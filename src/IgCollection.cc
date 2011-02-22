@@ -1,9 +1,5 @@
 // Supported types
-#ifdef PROJECT_NAME
-# include <ISpy/Services/interface/IgCollection.h>
-#else
-# include <IgCollection.h>
-#endif
+#include <Framework/IgCollection.h>
 
 #include <string>
 #include <cassert>
