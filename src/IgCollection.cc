@@ -1,8 +1,9 @@
 // Supported types
+
 #ifdef PROJECT_NAME
-# include <ISpy/Services/interface/IgCollection.h>
+ #include <ISpy/Services/interface/IgCollection.h>
 #else
-# include <IgCollection.h>
+ #include <Framework/IgCollection.h>
 #endif
 
 #include <string>
@@ -56,7 +57,7 @@ std::ostream &operator<<(std::ostream &stream, IgDataStorage &storage)
 {
   // Stream the types.
   stream << "{"
-         << "'Types': {";
+         << "\"Types\": {";
   for (size_t cni = 0, cne = storage.collectionNames().size(); cni != cne; ++cni)
   {
     const char *collectionName = storage.collectionNames()[cni].c_str();
@@ -77,7 +78,7 @@ std::ostream &operator<<(std::ostream &stream, IgDataStorage &storage)
   stream << "},\n";
 
   // Stream the collection contents.
-  stream << "'Collections': {";
+  stream << "\"Collections\": {";
   for (size_t cni = 0, cne = storage.collectionNames().size(); cni != cne; ++cni)
   {
     const char *collectionName = storage.collectionNames()[cni].c_str();
@@ -88,7 +89,7 @@ std::ostream &operator<<(std::ostream &stream, IgDataStorage &storage)
   stream << "},\n";
   
   // Stream the associations.
-  stream << "'Associations': {";
+  stream << "\"Associations\": {";
   for (size_t ai = 0, ae = storage.associationsNames().size(); ai != ae; ++ai)
   {
     const char *associationsName = storage.associationsNames()[ai].c_str();
