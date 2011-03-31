@@ -1,4 +1,4 @@
-<use   name="Iguana/Utilities"/>
+<use   name="classlib"/>
 <export>
   <lib   name="1"/>
 </export>
