@@ -197,19 +197,19 @@ public:
       case VECTOR_2D:
         {
           IgV2d &v = get<IgV2d>(position);
-          stream << "("<< v.x() << ", " << v.y() << ")";
+          stream << "["<< v.x() << ", " << v.y() << "]";
         }
         break;
       case VECTOR_3D:
         {
           IgV3d &v = get<IgV3d>(position);
-          stream << "("<< v.x() << ", " << v.y() << ", " << v.z() << ")";
+          stream << "["<< v.x() << ", " << v.y() << ", " << v.z() << "]";
         }
         break;
       case VECTOR_4D:
         {
           IgV4d &v = get<IgV4d>(position);
-          stream << "("<< v.x() << ", " << v.y() << ", " << v.z() << ", " << v.w() << ")";
+          stream << "["<< v.x() << ", " << v.y() << ", " << v.z() << ", " << v.w() << "]";
         }
         break;
       default:
