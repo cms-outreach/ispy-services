@@ -488,7 +488,6 @@ public:
   {}
   
   typedef T Type;
-  typedef T Original;
 };
 
 class IgCollectionItem;
@@ -897,16 +896,6 @@ public:
   T &get(IgProperty &property)
     {
       return property.handle().get<T>(m_position);
-    }
-
-
-  /** This template can be overwritten to transform IgV3d to foreign types,
-      like those used by eigen or even Coin.
-    */
-  template <class T>
-  typename IgColumn<T>::Type get(IgColumn<T> &column)
-    {
-      return column.handle().get<typename IgColumn<T>::Original>(m_position);
     }
 
   template <class T>
