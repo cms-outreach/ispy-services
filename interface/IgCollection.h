@@ -62,6 +62,7 @@ struct IgRef
 
 enum ColumnType {
   INT_COLUMN = 0,           // int
+  LONG_COLUMN,              // long long (to ensure 64 bit)
   STRING_COLUMN,            // std::string
   DOUBLE_COLUMN,            // double
   VECTOR_2D,                // A 2vector of doubles
@@ -88,6 +89,15 @@ struct ColumnTypeHelper<int>
   static ColumnType typeId(void)
     {
       return INT_COLUMN;
+    }
+};
+
+template <>
+struct ColumnTypeHelper<long long>
+{ 
+  static ColumnType typeId(void)
+    {
+      return LONG_COLUMN;
     }
 };
 
@@ -161,7 +171,10 @@ public:
       case INT_COLUMN:
         return static_cast<std::vector<int> *>(m_data)->size();
         break;
-      case STRING_COLUMN:
+     case LONG_COLUMN:
+        return static_cast<std::vector<long long> *>(m_data)->size();
+        break; 
+     case STRING_COLUMN:
         return static_cast<std::vector<std::string> *>(m_data)->size();
         break;
       case DOUBLE_COLUMN:
@@ -187,6 +200,9 @@ public:
       {
       case INT_COLUMN:
         stream << get<int>(position);
+        break;
+      case LONG_COLUMN:
+        stream << get<long long>(position);
         break;
       case STRING_COLUMN:
         stream << "\""<< get<std::string>(position) << "\"";
@@ -221,6 +237,7 @@ public:
     {
       static const char *typenames[] = {
         "int",
+        "long long",
         "string",
         "double",
         "v2d",
@@ -235,6 +252,9 @@ public:
       {
       case INT_COLUMN:
         return doExtend<int>();
+        break;
+      case LONG_COLUMN:
+        return doExtend<long long>();
         break;
       case DOUBLE_COLUMN:
         return doExtend<double>();
@@ -264,6 +284,9 @@ public:
       case INT_COLUMN:
         return doResize<int>(newSize);
         break;
+      case LONG_COLUMN:
+        return doResize<long long>(newSize);
+        break;
       case DOUBLE_COLUMN:
         return doResize<double>(newSize);
         break;
@@ -291,6 +314,9 @@ public:
       {
       case INT_COLUMN:
         doReserve<int>(size);
+        break;
+      case LONG_COLUMN:
+        doReserve<long long>(size);
         break;
       case DOUBLE_COLUMN:
         doReserve<double>(size);
@@ -320,6 +346,9 @@ public:
       case INT_COLUMN:
         doCompress<int>();
         break;
+      case LONG_COLUMN:
+        doCompress<long long>();
+        break;
       case DOUBLE_COLUMN:
         doCompress<double>();
         break;
@@ -347,6 +376,9 @@ public:
       {
       case INT_COLUMN:
         doClear<int>();
+        break;
+      case LONG_COLUMN:
+        doClear<long long>();
         break;
       case DOUBLE_COLUMN:
         doClear<double>();
@@ -411,6 +443,9 @@ public:
       case INT_COLUMN:
         doDestroy<int>();
         break;
+      case LONG_COLUMN:
+        doDestroy<long long>();
+	break;
       case DOUBLE_COLUMN:
         doDestroy<double>();
         break;

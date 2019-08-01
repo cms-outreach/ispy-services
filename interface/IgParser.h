@@ -43,6 +43,10 @@ public:
       {
         m_currentCollection->addProperty(name.c_str(), static_cast<int>(0));
       }
+      else if(type =="long long")
+      {
+        m_currentCollection->addProperty(name.c_str(), static_cast<long long>(0));
+      }
       else if(type == "double")
       {
         m_currentCollection->addProperty(name.c_str(), static_cast<double>(1.0));
@@ -109,6 +113,14 @@ public:
       m_buffer = endbuf;
     }
 
+  void parseLong(long long &result)
+    {
+      char *endbuf;
+      result = strtol(m_buffer, &endbuf, 10);
+      if (!endbuf)
+      { throwParseError(m_buffer-m_initialBuffer); }
+      m_buffer = endbuf;
+    }
 
   void parseDouble(double &result)
     {
@@ -266,6 +278,9 @@ public:
             break;
           case STRING_COLUMN:
             parseString(item.current<std::string>());
+            break;
+          case LONG_COLUMN:
+            parseLong(item.current<long long>());
             break;
           case DOUBLE_COLUMN:
             parseDouble(item.current<double>());
