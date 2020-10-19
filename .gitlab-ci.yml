@@ -1,0 +1,16 @@
+cmssw_compile:
+  tags:
+    - cvmfs
+  variables:
+    CMS_PATH: /cvmfs/cms.cern.ch
+    CMSSW_RELEASE: CMSSW_10_2_9
+  script:
+    - shopt -s expand_aliases
+    - set +u && source ${CMS_PATH}/cmsset_default.sh; set -u
+    - cmsrel ${CMSSW_RELEASE}
+    - cd ${CMSSW_RELEASE}/src
+    - cmsenv
+    - mkdir -p ISpy/Services
+    - cp -r "${CI_PROJECT_DIR}" "${CMSSW_BASE}/src/ISpy/Services/"
+    - scram b
+
