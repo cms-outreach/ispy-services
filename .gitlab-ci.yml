@@ -5,14 +5,15 @@ cmssw_compile:
     CMS_PATH: /cvmfs/cms.cern.ch
     CMSSW_RELEASE: CMSSW_10_2_9
   script:
-    - mkdir .tmp
-    - cp -r $CI_PROJECT_DIR/* .tmp
-    - ls -ltr .tmp
     - shopt -s expand_aliases
     - set +u && source ${CMS_PATH}/cmsset_default.sh; set -u
     - cmsrel ${CMSSW_RELEASE}
     - cd ${CMSSW_RELEASE}/src
     - cmsenv
     - mkdir -p ISpy/Services
-    - cp .tmp/* ${CMSSW_BASE}/src/ISpy/Services/
+    - mv ${CI_PROJECT_DIR}/src ${CMSSW_BASE}/src/ISpy/Services/
+    - mv ${CI_PROJECT_DIR}/interface ${CMSSW_BASE}/src/ISpy/Services/
+    - mv ${CI_PROJECT_DIR}/test ${CMSSW_BASE}/src/ISpy/Services/
+    - mv ${CI_PROJECT_DIR}/BuildFile.xml ${CMSSW_BASE}/src/ISpy/Services/
+    - scram b
 
