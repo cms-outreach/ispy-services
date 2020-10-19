@@ -11,6 +11,5 @@ cmssw_compile:
     - cd ${CMSSW_RELEASE}/src
     - cmsenv
     - mkdir -p ISpy/Services
-    - cp -r "${CI_PROJECT_DIR}/*" "${CMSSW_BASE}/src/ISpy/Services/"
-    - scram b
+    - ls -r "${CI_PROJECT_DIR}/*"
 
