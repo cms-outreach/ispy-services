@@ -3,7 +3,7 @@ cmssw_compile:
     - cvmfs
   variables:
     CMS_PATH: /cvmfs/cms.cern.ch
-    CMSSW_RELEASE: CMSSW_10_2_9
+    CMSSW_RELEASE: CMSSW_11_0_3
   script:
     - shopt -s expand_aliases
     - set +u && source ${CMS_PATH}/cmsset_default.sh; set -u
